@@ -21,8 +21,8 @@ const caveat = Caveat({
 });
 
 export const metadata: Metadata = {
-  title: 'Yoga & Anisa',
-  description: 'Website undangan pernikahan Yoga dan Anisa.',
+  title: 'Prayoga & Anisa',
+  description: 'Website undangan pernikahan Prayoga dan Anisa.',
 };
 
 export default function RootLayout({
@@ -35,8 +35,8 @@ export default function RootLayout({
       lang='en'
       className={`${delius.variable} ${sacramento.variable} ${caveat.variable}`}
     >
-      <body className='h-screen flex justify-center'>
-        <main className='h-screen aspect-9-16 overflow-hidden rounded-lg bg-white shadow-lg'>
+      <body className='min-h-screen flex justify-center no-scrollbar'>
+        <main className='min-h-screen aspect-9-16 overflow-y-scroll overflow-x-hidden rounded-lg bg-white shadow-lg no-scrollbar'>
           {children}
         </main>
       </body>
