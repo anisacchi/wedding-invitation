@@ -4,6 +4,7 @@ import Image from 'next/image';
 import hero from '@/public/images/hero.png';
 import { usePathname, useRouter } from 'next/navigation';
 import { useMusic } from '@/context/MusicContext';
+import { EnvelopeOpen } from './icons';
 
 interface WelcomeScreenProps {
   guestName: string | undefined;
@@ -38,12 +39,14 @@ const WelcomeScreen: React.FC<WelcomeScreenProps> = ({ guestName }) => {
       </div>
       <button
         onClick={openInvitationHandler}
-        className='px-4 py-2 bg-maroon-dark text-white text-sm rounded-lg hover:bg-maroon-light'
+        className='px-4 py-2 flex gap-2 justify-center items-center bg-maroon-dark text-white text-sm rounded-lg hover:bg-maroon-light'
       >
-        Buka Undangan
+        <EnvelopeOpen width={20} height={20} />
+        <span className='text-sm'>Buka Undangan</span>
       </button>
     </div>
   );
 };
 
 export default WelcomeScreen;
+

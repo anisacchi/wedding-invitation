@@ -2,6 +2,7 @@
 
 import { useMusic } from '@/context/MusicContext';
 import { useEffect } from 'react';
+import { SpeakerOff, SpeakerOn } from './icons';
 
 const MusicPlayer = () => {
   const { isPlaying, handlePlayMusic, toggleMusic } = useMusic();
@@ -23,9 +24,13 @@ const MusicPlayer = () => {
     <div>
       <button
         onClick={toggleMusic}
-        className='absolute z-50 bottom-10 right-2 p-2 border-2 bg-maroon-light hover:bg-maroon-light/80'
+        className='absolute z-50 bottom-10 right-2 p-2 rounded-full border border-maroon-dark bg-white hover:bg-maroon-dark/10'
       >
-        {isPlaying ? 'Pause M' : 'Play M'}
+        {isPlaying ? (
+          <SpeakerOn width={20} height={20} color='#800000' />
+        ) : (
+          <SpeakerOff width={20} height={20} color='#800000' />
+        )}
       </button>
     </div>
   );
