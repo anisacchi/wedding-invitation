@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import hero from '@/public/images/hero.png';
 import { usePathname, useRouter } from 'next/navigation';
+import { useMusic } from '@/context/MusicContext';
 
 interface WelcomeScreenProps {
   guestName: string | undefined;
@@ -11,8 +12,10 @@ interface WelcomeScreenProps {
 const WelcomeScreen: React.FC<WelcomeScreenProps> = ({ guestName }) => {
   const router = useRouter();
   const pathName = usePathname();
+  const { handlePlayMusic } = useMusic();
 
   const openInvitationHandler = () => {
+    handlePlayMusic();
     const detailPath = pathName + '/details';
     router.push(detailPath);
   };

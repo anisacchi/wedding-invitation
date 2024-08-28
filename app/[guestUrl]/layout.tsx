@@ -1,4 +1,5 @@
 import MusicPlayer from '@/components/MusicPlayer';
+import { MusicProvider } from '@/context/MusicContext';
 import React from 'react';
 
 type LayoutProps = {
@@ -7,10 +8,10 @@ type LayoutProps = {
 
 const layout = ({ children }: LayoutProps) => {
   return (
-    <>
+    <MusicProvider>
       <MusicPlayer />
       {children}
-    </>
+    </MusicProvider>
   );
 };
 
