@@ -35,8 +35,8 @@ export default function RootLayout({
       lang='en'
       className={`${delius.variable} ${sacramento.variable} ${caveat.variable}`}
     >
-      <body className='min-h-screen flex justify-center no-scrollbar'>
-        <main className='min-h-screen aspect-9-16 overflow-y-scroll overflow-x-hidden rounded-lg bg-white shadow-lg no-scrollbar'>
+      <body className='min-h-screen flex justify-center bg-white'>
+        <main className='relative h-screen aspect-9-16 overflow-y-scroll overflow-x-hidden rounded-lg bg-white shadow-lg'>
           {children}
         </main>
       </body>
