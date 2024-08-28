@@ -36,14 +36,17 @@ const MusicPlayer = () => {
       handlePlayMusic();
       document.removeEventListener('click', startMusicOnInteraction);
       document.removeEventListener('touchstart', startMusicOnInteraction);
+      document.removeEventListener('touchend', startMusicOnInteraction);
     };
 
     document.addEventListener('click', startMusicOnInteraction);
     document.addEventListener('touchstart', startMusicOnInteraction);
+    document.addEventListener('touchend', startMusicOnInteraction);
 
     return () => {
       document.removeEventListener('click', startMusicOnInteraction);
       document.removeEventListener('touchstart', startMusicOnInteraction);
+      document.removeEventListener('touchend', startMusicOnInteraction);
     };
   }, []);
 
@@ -58,7 +61,7 @@ const MusicPlayer = () => {
         onClick={toggleMusic}
         className='absolute z-50 bottom-10 right-2 p-2 border-2 bg-maroon-light hover:bg-maroon-light/80'
       >
-        {isPlaying ? 'Pause' : 'Play'}
+        {isPlaying ? 'Pause M' : 'Play M'}
       </button>
     </div>
   );
